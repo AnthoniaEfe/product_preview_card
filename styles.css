@@ -1,10 +1,17 @@
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .card {
-    flex-direction: row;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 
   .column {
     flex: 1;
+    flex-basis: 50%;
+  }
+
+  picture,
+  .product-img img {
+    border-radius: 10px 10px 0px 0pxs;
   }
 }
 
@@ -27,9 +34,11 @@ body {
   background-color: hsl(30, 38%, 92%);
   font-family: Montserrat, sans-serif;
   color: hsl(228, 12%, 48%);
+  font-size: 1rem;
   max-height: 100%;
   max-width: 100%;
   margin: 0;
+  padding: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,62 +46,99 @@ body {
 
 .card {
   background-color: hsl(0, 0%, 100%);
-  width: 80%;
+  width: 90%;
   max-width: 800px;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
   border-radius: 10px;
-  overflow: hidden;
+  margin: 10% auto;
 }
 
 .column {
-  flex: 1;
-  /* min-width: 300px; */
-}
-
-.product-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  max-height: 300px;
+  width: 100%;
 }
 
 .product-desc {
-  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.75rem;
+  gap: 1rem;
   margin: 0;
 }
 
+picture,
 .product-img img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.category {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
 }
 
 h1 {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 2.55rem;
+  font-weight: 900;
   color: hsl(212, 21%, 14%);
   font-family: Fraunces, sans-serif;
+  margin: 0;
+}
+
+.details {
+  line-height: 1rem;
+  margin: 0;
+}
+
+.product-price {
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  padding: 0;
+  gap: 0.75rem;
+}
+
+.sale-price {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: hsl(158, 36%, 37%);
+  font-family: Fraunces, sans-serif;
+  margin: 0;
+}
+
+.actual-price {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-decoration: line-through;
 }
 
 button {
   width: 100%;
   text-align: center;
-  padding: 6px 16px;
+  padding: 0.75rem 1.5rem;
   text-decoration: none;
-  font-size: 12px;
-  font-weight: 800;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
   color: white;
-  border: 1px solid hsl(0, 0%, 20%);
-  border-radius: 4px;
-  background-color: hsl(0, 0%, 20%);
+  border: 1px solid hsl(158, 36%, 37%);
+  border-radius: 6px;
+  background-color: hsl(158, 36%, 37%);
 }
 
 button:hover {
-  color: hsl(0, 0%, 20%);
-  border: 1px solid hsl(75, 94%, 57%);
-  background-color: hsl(75, 94%, 57%);
+  color: white;
+  border: 1px solid hsl(158, 42%, 18%);
+  background-color: hsl(158, 42%, 18%);
+}
+
+button img {
+  margin-right: 0.5rem;
 }
